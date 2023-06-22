@@ -43,5 +43,10 @@ describe('TestTDD', () => {
             // Test case: Calculate the sum of a string with newline delimiter
             assert.strictEqual(this.stringCalc.calculate('5\n6\n7', '\n'), 18);
         });
+
+        it('Calculate simple string with ";" delimiter', () => {
+            // Test case: Calculate the sum of a string with custom delimiter
+            assert.strictEqual(this.stringCalc.calculate('5;6;7', ';'), 18);
+        });
    });
 });
