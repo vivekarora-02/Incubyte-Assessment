@@ -9,7 +9,7 @@ module.exports = class StringCalculator {
         return sum;
     }
     //updated so as two pass one element as well
-    //this will make sure that, Calculate the sum of a string with newline delimiterd!
+    //this will make sure that, Calculate the sum of a string with custom delimiter!
     convertString(string, delimiter) {
         return string.split(delimiter); // Split the string by the specified delimiter
     }
