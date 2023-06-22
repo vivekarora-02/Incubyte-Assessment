@@ -19,6 +19,16 @@ describe('TestTDD', () => {
             assert.strictEqual(this.stringCalc.calculate('1'), 1);
         });
 
+        it('Calculate simple string with two elements', () => {
+            // Test case: Calculate the sum of a string with two elements
+            assert.strictEqual(this.stringCalc.calculate('1,0'), 1);
+        });
+
+        it('Calculate simple string with two elements 2', () => {
+            // Test case: Calculate the sum of a different string with two elements
+            assert.strictEqual(this.stringCalc.calculate('1,133'), 134);
+        });
+
         it('Calculate simple string with one element 2', () => {
             // Test case: Calculate the sum of a different string with one element
             assert.strictEqual(this.stringCalc.calculate('9'), 9);
