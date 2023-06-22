@@ -2,7 +2,7 @@ module.exports = class StringCalculator {
     constructor() {}
     calculate(numberString = '', delimiter = ',') {
         let sum = 0;
-        //this will make sure that two elements is accepted and summed!
+        //this will make sure that any numbers of elements (positive) is accepted and summed!
         this.convertString(numberString, delimiter).forEach((number) => {
             sum += +number;
         });
