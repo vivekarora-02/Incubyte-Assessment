@@ -3,6 +3,7 @@ module.exports = class StringCalculator {
     calculate(numberString = '', delimiter = ',') {
         let sum = 0;
         //this will make sure that any numbers of elements (positive) is accepted and summed!
+        //Calculate the sum of a string with positive numbers and zero
         this.convertString(numberString, delimiter).forEach((number) => {
             sum += +number;
         });
