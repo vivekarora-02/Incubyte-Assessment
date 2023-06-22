@@ -38,5 +38,10 @@ describe('TestTDD', () => {
             // Test case: Calculate the sum of a string with three elements
             assert.strictEqual(this.stringCalc.calculate('5,6,7'), 18);
         });
+
+        it('Calculate simple string with "\\n" delimiter', () => {
+            // Test case: Calculate the sum of a string with newline delimiter
+            assert.strictEqual(this.stringCalc.calculate('5\n6\n7', '\n'), 18);
+        });
    });
 });
