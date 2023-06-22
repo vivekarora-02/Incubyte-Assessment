@@ -34,5 +34,9 @@ describe('TestTDD', () => {
             assert.strictEqual(this.stringCalc.calculate('9'), 9);
         });
 
+        it('Calculate simple string with 3 elements', () => {
+            // Test case: Calculate the sum of a string with three elements
+            assert.strictEqual(this.stringCalc.calculate('5,6,7'), 18);
+        });
    });
 });
