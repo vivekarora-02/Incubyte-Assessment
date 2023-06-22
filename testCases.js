@@ -8,7 +8,7 @@ describe('TestTDD', () => {
         beforeEach(() => {
             this.stringCalc = new StringCalculator();
         });
-
+        //First Test Case
         it('Calculate empty string', () => {
             // Test case: Calculate the sum of an empty string
             assert.strictEqual(this.stringCalc.calculate(''), 0);
