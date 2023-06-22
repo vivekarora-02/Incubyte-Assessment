@@ -48,5 +48,10 @@ describe('TestTDD', () => {
             // Test case: Calculate the sum of a string with custom delimiter
             assert.strictEqual(this.stringCalc.calculate('5;6;7', ';'), 18);
         });
+
+        it('Calculate string with positive numbers and zero', () => {
+            // Test case: Calculate the sum of a string with positive numbers and zero
+            assert.strictEqual(this.stringCalc.calculate('1,2,3,0,4,5'), 15);
+        });
    });
 });
