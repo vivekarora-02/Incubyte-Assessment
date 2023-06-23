@@ -37,7 +37,7 @@ If there are multiple negatives, show all of them in the exception message.
 
 ## Output Image
 
-![Image](https://github.com/vivekarora-02/Incubyte/blob/master/Incubyte.png)
+![Image](https://github.com/vivekarora-02/Incubyte-Assessment/blob/master/outputImages/9.png)
 
 
 ## Thank You ❤️
