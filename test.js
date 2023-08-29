@@ -115,5 +115,30 @@ describe("TestTDD", () => {
         "Error: Negative numbers not allowed! -3"
       );
     });
+    it("Throw error for unsupported operand", () => {
+      // Test case: Validate that an exception is thrown for unsupported operand
+      expect(() => this.stringCalc.calculate("1,2,3", ",", "^")).to.throw(
+        "Error: Unsupported operand: ^"
+      );
+    });
+
+    it("Calculate with multiplication and division", () => {
+      // Test case: Calculate using multiplication and division operands
+      assert.strictEqual(this.stringCalc.calculate("6,3,2", ",", "*"), 36); // 6 * 3 * 2 = 36
+    });
+
+    it("Calculate with negative numbers and multiplication", () => {
+      // Test case: Calculate with negative numbers and multiplication operand
+      assert.strictEqual(this.stringCalc.calculate("-2,-3,4", ",", "*"), 24); // -2 * -3 * 4 = 24
+    });
+
+    it("Calculate division with result as floating point number", () => {
+      // Test case: Calculate division with result as floating point number
+      assert.approximately(
+        this.stringCalc.calculate("5,2", ",", "/"),
+        2.5,
+        0.0001
+      ); // 5 / 2 = 2.5
+    });
   });
 });
