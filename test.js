@@ -71,5 +71,10 @@ describe("TestTDD", () => {
       // Test case: Validate that no exception is thrown when no negative numbers are present
       expect(() => this.stringCalc.calculate("1,2,3")).to.not.throw();
     });
+
+    it("Calculate difference with subtraction (-) operand", () => {
+      // Test case: Calculate the difference using the subtraction operand
+      assert.strictEqual(this.stringCalc.calculate("10,5,2", ",", "-"), 3);
+    });
   });
 });
