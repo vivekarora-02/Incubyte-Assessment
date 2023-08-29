@@ -24,6 +24,9 @@ module.exports = class StringCalculator {
             sum *= +number;
             break;
           case "/":
+            if (+number === 0) {
+              throw new Error(`Error: Division by zero`);
+            }
             sum /= +number;
             break;
         }
