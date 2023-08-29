@@ -1,12 +1,32 @@
 module.exports = class StringCalculator {
   constructor() {}
-  calculate(numberString = "", delimiter = ",") {
+  calculate(numberString = "", delimiter = ",", operand = "+") {
     let sum = 0;
     const negativeNumbers = [];
-    this.convertString(numberString, delimiter).forEach((number) => {
+
+    if (!["+", "-", "*", "/"].includes(operand)) {
+      throw new Error(`Error: Unsupported operand: ${operand}`);
+    }
+
+    this.convertString(numberString, delimiter).forEach((number, index) => {
       this.validateNumber(number, negativeNumbers);
-      sum += +number;
+      if (index === 0) {
+        sum = +number;
+      } else {
+        switch (operand) {
+          case "+":
+            sum += +number;
+            break;
+          case "-":
+            sum -= +number;
+            break;
+          case "*":
+            sum *= +number;
+            break;
+        }
+      }
     });
+
     if (negativeNumbers.length > 0) {
       throw new Error(
         `Error: Negative numbers not allowed! ${negativeNumbers.join(", ")}`
