@@ -83,5 +83,14 @@ describe("TestTDD", () => {
         "Error: Unsupported operand: ^"
       );
     });
+    it("Calculate sum with addition (+) operand", () => {
+      // Test case: Calculate the sum using the addition operand
+      assert.strictEqual(this.stringCalc.calculate("1,2,3", ",", "+"), 6);
+    });
+
+    it("Calculate product with multiplication (*) operand", () => {
+      // Test case: Calculate the product using the multiplication operand
+      assert.strictEqual(this.stringCalc.calculate("2,3,4", ",", "*"), 24);
+    });
   });
 });
