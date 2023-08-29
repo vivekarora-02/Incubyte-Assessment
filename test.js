@@ -104,5 +104,9 @@ describe("TestTDD", () => {
         "Error: Division by zero"
       );
     });
+    it("Calculate with custom delimiter and division", () => {
+      // Test case: Calculate with custom delimiter and division operand
+      assert.strictEqual(this.stringCalc.calculate("25;5;2", ";", "/"), 2.5);
+    });
   });
 });
