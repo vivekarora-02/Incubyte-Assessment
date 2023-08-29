@@ -92,5 +92,10 @@ describe("TestTDD", () => {
       // Test case: Calculate the product using the multiplication operand
       assert.strictEqual(this.stringCalc.calculate("2,3,4", ",", "*"), 24);
     });
+
+    it("Calculate quotient with division (/) operand", () => {
+      // Test case: Calculate the quotient using the division operand
+      assert.strictEqual(this.stringCalc.calculate("10,2,2", ",", "/"), 2.5);
+    });
   });
 });
