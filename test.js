@@ -108,5 +108,12 @@ describe("TestTDD", () => {
       // Test case: Calculate with custom delimiter and division operand
       assert.strictEqual(this.stringCalc.calculate("25;5;2", ";", "/"), 2.5);
     });
+
+    it("should throw an exception for negative numbers during division", () => {
+      // Test case: Validate that an exception is thrown for negative numbers during division
+      expect(() => this.stringCalc.calculate("12,-3,4", ",", "/")).to.throw(
+        "Error: Negative numbers not allowed! -3"
+      );
+    });
   });
 });
