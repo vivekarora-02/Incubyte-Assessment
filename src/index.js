@@ -1,33 +1,35 @@
 module.exports = class StringCalculator {
   constructor() {}
-  calculate(numberString = "", delimiter = ",", operand = "+") {
-    let sum = 0;
-    const negativeNumbers = [];
 
-    if (!["+", "-", "*", "/"].includes(operand)) {
+  calculate(numberString = "", delimiter = ",", operand = "+") {
+    const supportedOperands = ["+", "-", "*", "/"];
+    const negativeNumbers = [];
+    let result = 0;
+
+    if (!supportedOperands.includes(operand)) {
       throw new Error(`Error: Unsupported operand: ${operand}`);
     }
 
     this.convertString(numberString, delimiter).forEach((number, index) => {
       this.validateNumber(number, negativeNumbers);
       if (index === 0) {
-        sum = +number;
+        result = +number;
       } else {
         switch (operand) {
           case "+":
-            sum += +number;
+            result += +number;
             break;
           case "-":
-            sum -= +number;
+            result -= +number;
             break;
           case "*":
-            sum *= +number;
+            result *= +number;
             break;
           case "/":
             if (+number === 0) {
-              throw new Error(`Error: Division by zero`);
+              throw new Error("Error: Division by zero");
             }
-            sum /= +number;
+            result /= +number;
             break;
         }
       }
@@ -38,7 +40,8 @@ module.exports = class StringCalculator {
         `Error: Negative numbers not allowed! ${negativeNumbers.join(", ")}`
       );
     }
-    return sum;
+
+    return result;
   }
 
   convertString(string, delimiter) {
