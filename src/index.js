@@ -23,6 +23,9 @@ module.exports = class StringCalculator {
           case "*":
             sum *= +number;
             break;
+          case "/":
+            sum /= +number;
+            break;
         }
       }
     });
