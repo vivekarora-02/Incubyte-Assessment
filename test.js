@@ -76,5 +76,12 @@ describe("TestTDD", () => {
       // Test case: Calculate the difference using the subtraction operand
       assert.strictEqual(this.stringCalc.calculate("10,5,2", ",", "-"), 3);
     });
+
+    it("Throw error for unsupported operand", () => {
+      // Test case: Check if an error is thrown for an unsupported operand
+      expect(() => this.stringCalc.calculate("5,3", ",", "^")).to.throw(
+        "Error: Unsupported operand: ^"
+      );
+    });
   });
 });
