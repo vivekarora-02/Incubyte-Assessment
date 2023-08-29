@@ -97,5 +97,12 @@ describe("TestTDD", () => {
       // Test case: Calculate the quotient using the division operand
       assert.strictEqual(this.stringCalc.calculate("10,2,2", ",", "/"), 2.5);
     });
+
+    it("should throw an exception for division by zero", () => {
+      // Test case: Validate that an exception is thrown for division by zero
+      expect(() => this.stringCalc.calculate("10,0", ",", "/")).to.throw(
+        "Error: Division by zero"
+      );
+    });
   });
 });
