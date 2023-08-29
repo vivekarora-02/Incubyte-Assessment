@@ -127,9 +127,11 @@ describe("TestTDD", () => {
       assert.strictEqual(this.stringCalc.calculate("6,3,2", ",", "*"), 36); // 6 * 3 * 2 = 36
     });
 
-    it("Calculate with negative numbers and multiplication", () => {
+    it("Throw error with negative numbers and multiplication", () => {
       // Test case: Calculate with negative numbers and multiplication operand
-      assert.strictEqual(this.stringCalc.calculate("-2,-3,4", ",", "*"), 24); // -2 * -3 * 4 = 24
+      expect(() => this.stringCalc.calculate("-2,-3,4", ",", "*")).to.throw(
+        "Error: Negative numbers not allowed! -2, -3"
+      );
     });
 
     it("Calculate division with result as floating point number", () => {
